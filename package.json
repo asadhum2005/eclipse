@@ -1,0 +1,25 @@
+{
+  "name": "eclipse",
+  "version": "1.0.0",
+  "description": "This is a bot used on Discord. ",
+  "main": "index.js",
+  "scripts": {
+    "test": ">T"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asadhum2005/eclipse.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "sad (Eclipse)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asadhum2005/eclipse/issues"
+  },
+  "homepage": "https://github.com/asadhum2005/eclipse#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
