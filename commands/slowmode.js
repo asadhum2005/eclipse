@@ -7,8 +7,6 @@ module.exports.run = async (bot, message, args) => {
         reason = 'a reason was not provided'
       };
 
-    let ayesss = message.guild.emojis.find(emoji =>emoji.name === "ayes")
-    let l = message.guild.emojis.find(emoji =>emoji.name === "loading")
 
     function clean(text) {
         if (typeof(text) === "string")
@@ -39,22 +37,15 @@ module.exports.run = async (bot, message, args) => {
       .setTimestamp()
       try {
 
-      message.channel.send(`${l} Slowmoding **#${message.channel.name}**...`).then(async(msg) =>{
+      message.channel.send(`Slowmoding **#${message.channel.name}**...`).then(async(msg) =>{
       await message.channel.setRateLimitPerUser(count, `Slowmode set to ${count} seconds. \n Responsible User: ${message.author.tag}`)
-      let logsChannel = message.guild.channels.find(channel => channel.name === "logs")
-      logsChannel.send(slowmodeSetLogEmbed)
-      await msg.edit(`${ayesss} **Done!**`, embed);
+      await msg.edit(`Slowmode Set!`, embed);
 
     });
       } catch (err) {
-        message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        message.channel.send("There was an error.")
       };
     
-      let used = new Discord.RichEmbed()
-      .setAuthor(`Command Used:`, bot.user.avatarURL)
-      .setColor(`#81868e`)
-      .setDescription(`/slowmode used in ${message.guild.name} (${message.guild.id}) \n ${message.author.username}#${message.author.discriminator}, ${message.author.id}`)
-      bot.channels.get("575619138576318484").send(used)
     };
     
 
