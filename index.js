@@ -23,7 +23,12 @@ fs.readdir("./commands/", (err, files) => {
   });
 
 process.on('unhandledRejection', err =>{
-    client.channels.get('595885700839112724').send(err, {code: "js"});
+    client.channels.get('595885700839112724').send("", {
+        embed: new Discord.RichEmbed()
+        .setTitle("Error")
+        .setDescription(`\`\`\`js\n${err}\n\`\`\``)
+        .setColor(config.color)
+    });
 });
 
 client.on('ready', async() =>{
@@ -49,9 +54,6 @@ client.on('ready', async() =>{
     
     var a = client.generateInvite()
     console.log(`${client.user.tag} is online`)
-    client.channels.get('595547701630992385').send(`
-    Bot Started    
-    `)
     console.log(' ')
     console.log('==========')
 
@@ -59,6 +61,7 @@ client.on('ready', async() =>{
 
 });
 client.on('message', async(message) =>{
+
     // Ignore other bots and DMs
     if (message.author.bot) return;
     if (message.channel.type == 'dm') return;
@@ -105,6 +108,16 @@ client.on('message', async(message) =>{
         client.generateInvite().then(inv=>{
             message.channel.send(`**Invite Me! ${inv}**`)
         });
+    };
+
+    if (cmd === `${prefix}blacklist`) {
+        let blacklisted = [`${client.user.id}`, '0000000000'];
+        let toBlacklist = args[0];
+            if (message.mentions.members.first()) {
+                toBlacklist = message.mentions.members.first().user.id;
+            }
+        blacklisted.push(toBlacklist);
+        return message.channel.send('Array Value: **' + blacklisted + '**')
     };
 });
 
