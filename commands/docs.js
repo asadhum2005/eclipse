@@ -5,7 +5,7 @@ const qs = require('querystring')
 module.exports.run = async(client, message, args) =>{
 
     const queryString = args.join(" ")
-    const res = await fetch(`https://djsdocs.sorta.moe/main/stable/embed?q=${queryString}`);
+    const res = await fetch(`https://djsdocs.sorta.moe/v1/main/stable/embed?q=${queryString}`);
     const embed = await res.json();
     
     if(!queryString){
@@ -23,7 +23,7 @@ module.exports.run = async(client, message, args) =>{
                 return message.reply('<:greentick:596293276881911849> Command cancelled')
             }
             const queryString = collected.first().content;
-            const res = await fetch(`https://djsdocs.sorta.moe/main/stable/embed?q=${queryString}`);
+            const res = await fetch(`https://djsdocs.sorta.moe/v1/main/stable/embed?q=${queryString}`);
             const info = await res.json();
            
             if (!info || !res) {
