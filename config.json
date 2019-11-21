@@ -1,8 +1,8 @@
 {
     "token": null,
-    "prefix": "?",
-    "owners": ["501710994293129216", "137624084572798976"],
+    "prefix": "",
+    "owners": ["", ""],
     "color": "#82a6e0",
     "red": "#ff1100",
-    "supportServer": "https://discord.gg/gdGrRSp"
+    "supportServer": ""
 }
