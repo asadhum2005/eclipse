@@ -1,2 +1,2 @@
-# eclipse
-Our bot :D
+# still in beta
+### come back later;

@@ -1,5 +1,5 @@
 {
-  "name": "eclipse",
+  "name": "y",
   "version": "1.0.0",
   "description": "This is a bot used on Discord. ",
   "main": "index.js",
@@ -20,12 +20,19 @@
   },
   "homepage": "https://github.com/asadhum2005/eclipse#readme",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "discord.js": "^11.5.1",
-    "file-system": "^2.2.2",
+    "@keyv/sqlite": "2.0.2",
+    "body-parser": "1.19.0",
+    "chalk": "2.4.2",
+    "discord.js": "11.5.1",
+    "discord.js-reaction-menu": "1.0.1",
+    "express": "4.17.1",
+    "file-system": "2.2.2",
     "fs": "0.0.1-security",
-    "moment": "^2.24.0",
-    "node-fetch": "^2.6.0",
-    "relevant-urban": "^2.0.0"
-  }
+    "got": "10.2.2",
+    "keyv": "4.0.0",
+    "moment": "2.24.0",
+    "node-fetch": "2.6.0",
+    "relevant-urban": "2.0.0"
+  },
+  "devDependencies": {}
 }
